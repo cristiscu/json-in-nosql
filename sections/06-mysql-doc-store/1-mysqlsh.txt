@@ -1,0 +1,18 @@
+When MySQL 8+ is running locally at port 3308 --> 33080 for X Protocol (33060 for 3306).
+
+mysqlsh -u root --sqlc -P 3308 -e "SHOW plugins" --> check mysqlsh plugin
+
+mysqlsh
+shell.status()
+\connect mysqlx://root@localhost:33080
+db
+\sql
+show databases;
+create database store;
+\js
+\use store
+db
+db.getCollections()
+db.createCollection("books")
+db.getCollections()
+\quit
