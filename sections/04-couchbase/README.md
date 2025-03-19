@@ -24,4 +24,4 @@
 
 * From your Couchbase extension, connect to your Couchbase Capella cluster, using the *Public Connection String* from the Connect tab (something like *couchbases://cb.ewydjghsojb9kfuj.cloud.couchbase.com*), always check SSL for a secure connection, then use the *Database Access* credentials you created before. You must be able to browse and expand now in the left sidebar your cluster into buckets, scopes, and collections.  
 
- * Open SQLPP files (Workbench) and SQLPPNB files (Jupyter Notebooks) with SQL++ queries that can be executed using the Couchbase plugin.
+ * Open SQLPPNB files (Jupyter Notebooks) with SQL++ queries that can be executed using the Couchbase plugin.
