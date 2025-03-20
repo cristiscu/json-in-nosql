@@ -1,0 +1,15 @@
+JSON.SET "bicycle:4" "." "{\"brand\": \"Noka Bikes\", \"model\": \"Kahuna\", \"price\": 3200, \"description\": \"Whether you want to try your hand at XC racing or are looking for a lively trail bike that's just as inspiring on the climbs as it is over rougher ground, the Wilder is one heck of a bike built specifically for short women. Both the frames and components have been tweaked to include a women\\u2019s saddle, different bars and unique colourway.\", \"condition\": \"used\"}"
+
+FT.CREATE idx:bicycle                                 
+    ON JSON                                           
+        PREFIX 1 bicycle:                             
+    SCHEMA
+        $.brand AS brand TEXT WEIGHT 1.0              
+        $.model AS model TEXT WEIGHT 1.0              
+        $.description AS description TEXT WEIGHT 1.0  
+        $.price AS price NUMERIC                      
+        $.condition AS condition TAG SEPARATOR, INDEXEMPTY INDEXMISSING
+
+FT.SEARCH idx:bicycle "@price:[-inf 2000]" SORTBY price LIMIT 0 5
+
+FT.EXPLAIN idx:bicycle "@price:[(1000 +inf]"

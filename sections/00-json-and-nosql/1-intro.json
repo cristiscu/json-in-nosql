@@ -1,11 +1,12 @@
-
--- most simple (empty) JSON object!
+"most simple (empty) JSON object!"
 { }
 
--- simple key-value
+"======================================================="
+"simple key-value"
 { "name": "John" }
 
--- key-value dictionary
+"======================================================="
+"key-value dictionary"
 {
     "name": "John",
     "age": 33,
@@ -15,14 +16,16 @@
     "lived In": null
 }
 
--- nested object
+"======================================================="
+"nested object"
 {
     "name": "John",
     "age": 33,
     "spouse": { "name": "Anne", "age": 30 }
 }
 
--- nested array + array of scalar values
+"======================================================="
+"nested array + array of scalar values"
 {
     "name": "John",
     "age": 33,
@@ -32,7 +35,8 @@
     "years lived in": [1999, 2023]
 }
 
--- outer array + JSON nulls + flexible schema (schema "on-read")
+"======================================================="
+"outer array + JSON nulls + flexible schema (schema on-read)"
 [
     {
         "name": "John",
@@ -54,7 +58,8 @@
     }
 ]
 
--- relaxed JSON format (JSON5)
+"======================================================="
+"relaxed JSON format (JSON5)"
 [
     {
         // unquoted key names + single-quoted values

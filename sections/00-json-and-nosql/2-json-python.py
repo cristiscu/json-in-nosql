@@ -1,27 +1,27 @@
-# see https://www.w3schools.com/python/python_json.asp
-
-s = """
-{
+data = {
     "store": {
-        "book": [ 
+        "book": [
             {
                 "category": "reference",
                 "author": "Nigel Rees",
                 "title": "Sayings of the Century",
-                "price": 8.95
+                "price": 8.95,
+                "editions": [1993, 1995, 1998]
             },
             {
                 "category": "fiction",
                 "author": "Evelyn Waugh",
                 "title": "Sword of Honour",
-                "price": 12.99
+                "price": 12.99,
+                "editions": [1996, 1998]
             },
             {
                 "category": "fiction",
                 "author": "Herman Melville",
                 "title": "Moby Dick",
                 "isbn": "0-553-21311-3",
-                "price": 8.99
+                "price": 8.99,
+                "editions": [1991, 1996, 1998]
             },
             {
                 "category": "fiction",
@@ -29,6 +29,16 @@ s = """
                 "title": "The Lord of the Rings",
                 "isbn": "0-395-19395-8",
                 "price": 22.99
+            },
+            {
+                "category": "software",
+                "authors": [
+                    { "author": "Thomas Linn" },
+                    { "author": "Jane Mathews" }
+                ],
+                "title": "Snowflake for Beginners",
+                "price": 12.49,
+                "editions": [1996]
             }
         ],
         "bicycle": {
@@ -37,18 +47,8 @@ s = """
         }
     }
 }
-"""
 
-import json
-
-data = json.loads(s)
-print(data)
-
-print("=================================")
-print(json.dumps(data))
-
-print("=================================")
-print(json.dumps(data, indent=2))
+print(data["store"])
 
 print("=================================")
 print(type(data["store"]), type(data["store"]["book"]))
