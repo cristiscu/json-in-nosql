@@ -1,0 +1,62 @@
+"=============================================="
+"create new test1 database in Fauxton"
+
+"=============================================="
+"add 3 documents to this database"
+{
+    "_id": "00a271787f89c0ef2e10e88a0c0001f4",
+    "type": "movie",
+    "title": "My Neighbour Totoro",
+    "year": 1988,
+    "director": "miyazaki",
+    "rating": 8.2
+}
+{
+    "_id": "00a271787f89c0ef2e10e88a0c0003f0",
+    "type": "movie",
+    "title": "Kikis Delivery Service",
+    "year": 1989,
+    "director": "miyazaki",
+    "rating": 7.8
+}
+{
+    "_id": "00a271787f89c0ef2e10e88a0c00048b",
+    "type": "movie",
+    "title": "Princess Mononoke",
+    "year": 1997,
+    "director": "miyazaki",
+    "rating": 8.4
+}
+
+"=============================================="
+"create an index for a Mango query"
+{
+    "index": {
+       "fields": [
+          "year"
+       ]
+    },
+    "name": "year-json-index",
+    "type": "json"
+}
+
+"=============================================="
+"run a Mango query"
+{
+    "selector": {
+       "year": {
+          "$eq": 1988
+       }
+    }
+}
+
+"=============================================="
+"replace the query"
+{
+    "selector": {
+       "year": {
+          "$lt": 1990,
+          "$gte": 1980
+       }
+    }
+}
