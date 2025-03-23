@@ -29,7 +29,17 @@
 }
 
 "=============================================="
-"create an index for a Mango query"
+"run a Mango query"
+{
+    "selector": {
+       "year": {
+          "$eq": 1988
+       }
+    }
+}
+
+"=============================================="
+"create an index for the Mango query, then run it again"
 {
     "index": {
        "fields": [
@@ -38,16 +48,6 @@
     },
     "name": "year-json-index",
     "type": "json"
-}
-
-"=============================================="
-"run a Mango query"
-{
-    "selector": {
-       "year": {
-          "$eq": 1988
-       }
-    }
 }
 
 "=============================================="
