@@ -1,0 +1,14 @@
+select * from c
+
+select c.tags[1].name
+from c 
+where array_length(c.tags) > 2
+
+SELECT c.categoryName, sum(c.price) as totalPrice
+FROM c
+group by c.categoryName
+
+SELECT c.categoryName, sum(c.price) as totalPrice
+FROM c
+where array_length(c.tags) >= 2
+group by c.categoryName
